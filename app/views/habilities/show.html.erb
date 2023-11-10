@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @hability %>
+
+<div>
+  <%= link_to "Edit this hability", edit_hability_path(@hability) %> |
+  <%= link_to "Back to habilities", habilities_path %>
+
+  <%= button_to "Destroy this hability", @hability, method: :delete %>
+</div>

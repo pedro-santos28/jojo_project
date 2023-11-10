@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Habilities</h1>
+
+<div id="habilities">
+  <% @habilities.each do |hability| %>
+    <%= render hability %>
+    <p>
+      <%= link_to "Show this hability", hability %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New hability", new_hability_path %>

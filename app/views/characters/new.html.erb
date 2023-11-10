@@ -1,0 +1,72 @@
+<div class="container">
+  <h2 class="text-primary mb-3 text-center">
+    Add a new Jojo character 
+  </h2>
+
+ <%= form_with model: Character.new, url: create_character_path  do |form| %>
+  <div class="d-flex flex-column gap-4">
+    <div class="mb-1">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control"%>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label :japanese_name, class: "form-label"%>
+      <%= form.text_field :japanese_name, class: "form-control"%>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label :image, class: "form-label"%>
+      <%= form.text_field :image, class: "form-control"%>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label :nationality, class: "form-label"%>
+      <%= form.text_field :nationality, class: "form-control"%>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label :catchphrase, class: "form-label"%>
+      <%= form.text_field :catchphrase, class: "form-control"%>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label :family, class: "form-label"%>
+      <%= form.text_field :family, class: "form-control"%>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label :chapter, class: "form-label"%>
+      <%= form.text_field :chapter, class: "form-control"%>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label "Alive", class: "form-label"%>
+      <div class="d-flex gap-2 align-items-center">
+        <%= form.label "Yes"%>
+        <%= form.radio_button :living, true%>
+        <%= form.label "No"%>
+        <%= form.radio_button :living, false%>
+      </div>
+    </div>
+
+      <div class="mb-1">
+      <%= form.label "Human", class: "form-label"%>
+      <div class="d-flex gap-2 align-items-center">
+        <%= form.label "Yes"%>
+        <%= form.radio_button :is_human, true%>
+        <%= form.label "No"%>
+        <%= form.radio_button :is_human, false%>
+      </div>
+     
+    </div>
+
+
+    <div class="mb-1">
+      <%= form.submit class: "btn btn-primary" %>
+      <%= link_to "Back", root_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+<%end %>
+
+</div>
