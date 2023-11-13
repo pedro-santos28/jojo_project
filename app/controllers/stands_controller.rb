@@ -22,16 +22,10 @@ class StandsController < ApplicationController
   # POST /stands or /stands.json
   def create
     @stand = Stand.new(stand_params)
-
-    respond_to do |format|
       if @stand.save
-        format.html { redirect_to stand_url(@stand), notice: "Stand was successfully created." }
-        format.json { render :show, status: :created, location: @stand }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @stand.errors, status: :unprocessable_entity }
+        @stands = Stand.all
+        flash[:notice] = "Stand was successfully created."
       end
-    end
   end
 
   # PATCH/PUT /stands/1 or /stands/1.json
