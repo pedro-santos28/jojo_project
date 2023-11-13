@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProjectFromScratch04</title>
+    <title>Jojo Project</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,9 +11,10 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flash" %>
+   
     <div class="container-fluid">
+       <%= render "shared/navbar" %>
+    <%= render "shared/flash" %>
       <%= yield %>
     </div>
     

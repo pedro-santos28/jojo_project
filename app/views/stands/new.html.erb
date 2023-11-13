@@ -1,6 +1,6 @@
-<%= turbo_frame_tag "stands" do %>
-<div class="container mt-5">
-  <h1 class="text-primary">New stand</h1>
-  <%= render "form", stand: @stand %>
-</div>
+<%= turbo_frame_tag "stands_frame" do %>
+  <div class="container mt-5">
+    <h1 class="text-primary">New stand</h1>
+    <%= render "form", stand: @stand %>
+  </div>
 <% end %>

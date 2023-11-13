@@ -1,5 +1,5 @@
-<%= turbo_frame_tag "stands" do %>
-  <div class="container mt-5">
+<%= turbo_stream.update "stands_frame" do %>
+  <div id="stands" class="container mt-5">
     <div class="d-flex gap-3 align-items-center justify-content-around">
       <h1 class="text-primary">Stands</h1>
       <%= link_to "New stand", new_stand_path, class: "btn btn-primary"%>
@@ -13,4 +13,6 @@
       <%end%>
     </div>
   </div>
-<% end %>
+<%end%>
+
+<%= turbo_stream.replace "notice", partial: "shared/flash"%>

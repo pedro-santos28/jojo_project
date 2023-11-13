@@ -8,11 +8,14 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
-    if @character.save
-      flash[:notice] = "New character added!"
-      redirect_to characters_path
-    else
+    @character.save
+    @characters = Character.all
 
+    respond_to do |format|
+      format.turbo_stream do
+        flash.now[:notice] = "Character has been successfully created!"
+      end
+      format.html { redirect_to characters_path, notice: "Character was successfully created." }
     end
   end
 

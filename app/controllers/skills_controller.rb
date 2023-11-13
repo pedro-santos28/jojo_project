@@ -22,14 +22,15 @@ class SkillsController < ApplicationController
   # POST /skills or /skills.json
   def create
     @skill = Skill.new(skill_params)
+    @skill.save
+    @skills = Skill.all
 
-      if @skill.save
-        flash[:notice] =  "Skill was successfully created."
-        redirect_to skills_path
-      else
-        flash[:alert] =  "Something went wrong. Try again!"
-        render :new, status: :unprocessable_entity
+    respond_to do |format|
+      format.turbo_stream do
+        flash.now[:notice] = "Skill has been successfully added!"
       end
+      format.html { redirect_to characters_path, notice: "Skill was successfully added." }
+    end
   end
 
   # PATCH/PUT /skills/1 or /skills/1.json

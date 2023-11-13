@@ -1,0 +1,18 @@
+<%= turbo_stream.update "characters_frame" do%>
+  <%= turbo_frame_tag "characters_frame" do %>
+    <div class="container mt-5">
+      <div class="d-flex gap-3 align-items-center justify-content-around">
+        <h1 class="text-primary">Characters</h1>
+        <%= link_to "New character", new_character_path, class: "btn btn-primary"%>
+      </div>
+
+      <div class="row gap-3 mt-5">
+        <% @characters.each do |character|%>
+        <div class="col">
+          <%= render partial: "character", locals: {character: character}%>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  <% end %>
+<% end %>

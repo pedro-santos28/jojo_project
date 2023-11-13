@@ -1,7 +1,14 @@
-<%= turbo_stream.update "skills" do%>
-  <div id="skills">
-    <% @skills.each do |skill| %>
-      <%= render partial: "skill", locals: {skill: skill}%>
-    <% end %>
-  </div>
+<%= turbo_stream.update "skills_frame" do%>
+  <%= turbo_frame_tag "skills_frame" do%>
+    <div class="d-flex gap-3 align-items-center justify-content-around mb-3">
+      <h1 class="text-primary">Skills</h1>
+      <%= link_to "New skill", new_skill_path, class: "btn btn-primary"%>
+    </div>
+
+    <div id="skills">
+      <% @skills.each do |skill| %>
+          <%= render partial: "skill", locals: {skill: skill}%>
+      <% end %>
+    </div>
+  <%end%>
 <%end%>

@@ -7,7 +7,7 @@
 
   <div class="mb-3 d-flex flex-column align-items-start gap-1">
     <%= form.label "Stand user", class: "form-label" %>
-    <%= form.collection_select :character_id, Character.all, :id, :name, prompt: true%>
+    <%= form.collection_select :character_id, Character.all, :id, :name, prompt: "Select the character this stand belongs to"%>
   </div>
 
   <div class="mb-3">
