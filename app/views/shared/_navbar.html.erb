@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav d-flex align-items-center">
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link"%>
         </li>
@@ -13,7 +13,10 @@
           <%= link_to "Characters", characters_path, class: "nav-link"%>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Stands</a>
+          <%= link_to "Stands", stands_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Skills", skills_path, class: "nav-link"%>
         </li>
         
       </ul>

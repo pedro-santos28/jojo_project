@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_10_152219) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_10_200147) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "japanese_name"
@@ -25,19 +25,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_10_152219) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "characters_habilities", id: false, force: :cascade do |t|
-    t.integer "characters_id", null: false
-    t.integer "habilities_id", null: false
-    t.index ["characters_id"], name: "index_characters_habilities_on_characters_id"
-    t.index ["habilities_id"], name: "index_characters_habilities_on_habilities_id"
+  create_table "characters_skills", id: false, force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.integer "skill_id", null: false
+    t.index ["character_id"], name: "index_characters_skills_on_character_id"
+    t.index ["skill_id"], name: "index_characters_skills_on_skill_id"
   end
 
-  create_table "habilities", force: :cascade do |t|
+  create_table "skills", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "characters_habilities", "characters", column: "characters_id"
-  add_foreign_key "characters_habilities", "habilities", column: "habilities_id"
+  create_table "stands", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "chapter"
+    t.string "battlecry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "character_id", null: false
+    t.index ["character_id"], name: "index_stands_on_character_id"
+  end
+
+  add_foreign_key "characters_skills", "characters"
+  add_foreign_key "characters_skills", "skills"
+  add_foreign_key "stands", "characters"
 end

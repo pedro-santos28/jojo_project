@@ -1,0 +1,7 @@
+<%= turbo_stream.update "skills" do%>
+  <div id="skills">
+    <% @skills.each do |skill| %>
+      <%= render partial: "skill", locals: {skill: skill}%>
+    <% end %>
+  </div>
+<%end%>

@@ -1,0 +1,8 @@
+<div class="row mb-2">
+  <div class="col text-center">
+    <span class="badge rounded-pill text-bg-secondary p-2 "><%= skill.name %></span>
+  </div> 
+  <div class="col text-center">
+    <%= button_to "Delete", skill_path(skill), class: "btn btn-danger", method: :delete%>
+  </div>
+</div>

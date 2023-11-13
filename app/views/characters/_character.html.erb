@@ -1,0 +1,10 @@
+<div class="card d-flex flex-column gap-3 align-items-center">
+  <div class="text-center">name: <%= link_to character.name, show_character_path(character) %></div>
+  <div>
+    <%= image_tag image_helper(character.image), width: 160, height: 200 %>
+  </div>  
+  <div>
+    chapter: <%= character.chapter %>
+  </div>
+
+</div>

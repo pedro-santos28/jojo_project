@@ -1,0 +1,11 @@
+  <%= form_with(model: skill) do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control"%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit class: "btn btn-primary" %>
+      <%= link_to "Back", skills_path, class: "btn btn-secondary" %>
+    </div>
+  <% end %>

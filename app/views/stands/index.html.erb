@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="d-flex gap-3 align-items-center justify-content-around">
+    <h1 class="text-primary">Stands</h1>
+    <%= link_to "New stand", new_stand_path, class: "btn btn-primary"%>
+  </div>
+
+  <div class="row gap-3 mt-5">
+    <% @stands.each do |stand|%>
+    <div class="col">
+      <%= render partial: "stand", locals: {stand: stand}%>
+    </div>
+    <%end%>
+  </div>
+</div>

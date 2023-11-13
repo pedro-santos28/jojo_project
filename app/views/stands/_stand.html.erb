@@ -1,0 +1,9 @@
+<div class="card d-flex flex-column gap-3 align-items-center">
+  <div class="text-center">name: <%= link_to stand.name, stand_path(stand) %></div>
+  <div>
+    <%= image_tag image_helper(stand.image) , size: 150 %>
+  </div>  
+  <div>
+    stand user: <%= stand.character.name %>
+  </div>
+</div>

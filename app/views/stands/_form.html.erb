@@ -1,0 +1,32 @@
+<%= form_with(model: stand) do |form| %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control"%>
+  </div>
+
+  <div class="mb-3 d-flex flex-column align-items-start gap-1">
+    <%= form.label "Stand user", class: "form-label" %>
+    <%= form.collection_select :character_id, Character.all, :id, :name, prompt: true%>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :image, class: "form-label" %>
+    <%= form.text_field :image, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :chapter, class: "form-label" %>
+     <%= form.text_field :chapter, class: "form-control" %>
+  </div>
+
+   <div class="mb-3">
+    <%= form.label :battlecry, class: "form-label" %>
+     <%= form.text_field :battlecry, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to "Back", stands_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

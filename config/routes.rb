@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :habilities
+  resources :stands
+  resources :skills
   get "characters", to: "characters#index"
+  get "characters/:id/show", to: "characters#show", as: "show_character"
   get "characters/new", to: "characters#new", as: "new_character"
   post "characters/create", to: "characters#create", as: "create_character"
 
