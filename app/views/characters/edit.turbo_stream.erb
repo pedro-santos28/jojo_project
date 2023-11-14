@@ -1,10 +1,12 @@
-<%= turbo_stream.update "stands_frame" do %>
-  <%= turbo_frame_tag "stands_frame" do %>
-    <div class="container mt-5">
-      <h1 class="text-primary">Edit stand</h1>
-      <%= render "form", stand: @stand %>
+<%= turbo_stream.update "characters_frame" do %>
+  <%= turbo_frame_tag "characters_frame" do %>
+    <div class="container">
+      <h2 class="text-primary mb-3 text-center">
+        Edit character
+      </h2>
+      <%= render partial: "form", locals: {character: @character} %>
     </div>
-  <% end %>
+  <%end%>
 <%end%>
 
 <%= turbo_stream.replace "notice", partial: "shared/flash"%>

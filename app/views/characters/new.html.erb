@@ -3,6 +3,6 @@
   <h2 class="text-primary mb-3 text-center">
     Add a new Jojo character 
   </h2>
-  <%= render "form" %>
+  <%= render partial: "form", locals: {character: @character} %>
 </div>
 <%end%>

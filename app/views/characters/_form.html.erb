@@ -1,4 +1,4 @@
-<%= form_with model: Character.new, url: create_character_path  do |form| %>
+<%= form_with model: character, url: create_character_path  do |form| %>
   <div class="row">
     <div class="col-md-7">
       <div class="mb-1">
@@ -38,7 +38,6 @@
     </div>
 
     <div class="col-md-5">
-
       <div class="mb-2">
         <%= form.label "Alive", class: "form-label fs-5 fw-bold mr-3"%>
 
@@ -63,16 +62,14 @@
       <div class="my-3 d-flex flex-column justify-content-start border border-secondary rounded p-2">
         <%= form.label "Skills", class: "form-label text-center fs-4 fw-bold"%>
         <div style="max-height: 200px" class=" d-flex flex-column overflow-y-scroll">
-        <div class="m-3">
-           <%= form.collection_check_boxes :skill_ids, Skill.all, :id, :name do |b| %>
-           <div class="p-2 d-flex gap-2 fs-5 align-items-center">
-              <%= b.check_box class: "form-check-input mt-0 border border-primary" %>
-              <%= b.label class:"text-secondary"%>
-           </div>
-              
-           <%end%>
-        </div>
-         
+          <div class="m-3">
+            <%= form.collection_check_boxes :skill_ids, Skill.all, :id, :name do |b| %>
+            <div class="p-2 d-flex gap-2 fs-5 align-items-center">
+                <%= b.check_box class: "form-check-input mt-0 border border-primary" %>
+                <%= b.label class:"text-secondary"%>
+            </div>
+            <%end%>
+          </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-<div class="card d-flex flex-column align-items-center justify-content-center h-100">
+<div class="card d-flex flex-column align-items-center justify-content-center h-100 border-primary" style="background-color: #efaeea;">
   <div class="w-100 text-center">name: <%= link_to stand.name, stand_path(stand), data: {turbo_stream: true}%></div>
   <div class="d-flex justify-content-center">
     <%= image_tag stand.image, size: 130, class: "rounded" if stand.image.present? %>

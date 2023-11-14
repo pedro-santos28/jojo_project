@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   delete "characters/:id/destroy", to: "characters#destroy", as: "destroy_character"
   get "characters/new", to: "characters#new", as: "new_character"
   post "characters/create", to: "characters#create", as: "create_character"
-  get "characters/edit", to: "characters#edit", as: "edit_character"
-  post "characters/update", to: "characters#update", as: "update_character"
+  get "characters/:id/edit", to: "characters#edit", as: "edit_character"
+  post "characters/:id/update", to: "characters#update", as: "update_character"
 
   # Defines the root path route ("/")
   root "characters#index"
