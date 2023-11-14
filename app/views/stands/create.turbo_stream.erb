@@ -5,9 +5,9 @@
       <%= link_to "New stand", new_stand_path, class: "btn btn-primary"%>
     </div>
 
-    <div class="row gap-3 mt-5">
+    <div class="row mt-5">
       <% @stands.each do |stand|%>
-      <div class="col">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2">
         <%= render partial: "stand", locals: {stand: stand}%>
       </div>
       <%end%>

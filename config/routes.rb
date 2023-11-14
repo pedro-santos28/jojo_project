@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :skills
   get "characters", to: "characters#index"
   get "characters/:id/show", to: "characters#show", as: "show_character"
+  delete "characters/:id/destroy", to: "characters#destroy", as: "destroy_character"
   get "characters/new", to: "characters#new", as: "new_character"
   post "characters/create", to: "characters#create", as: "create_character"
 

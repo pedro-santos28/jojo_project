@@ -1,7 +1,7 @@
-<div class="card d-flex flex-column gap-3 align-items-center">
-  <div class="text-center">name: <%= link_to stand.name, stand_path(stand) %></div>
-  <div>
-    <%= image_tag image_helper(stand.image) , size: 150 %>
+<div class="card d-flex flex-column align-items-center justify-content-center h-100">
+  <div class="w-100 text-center">name: <%= link_to stand.name, stand_path(stand), data: {turbo_stream: true}%></div>
+  <div class="d-flex justify-content-center">
+    <%= image_tag stand.image, size: 130, class: "rounded" if stand.image.present? %>
   </div>  
   <div>
     stand user: <%= stand.character.name %>

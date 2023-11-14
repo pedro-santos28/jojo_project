@@ -10,4 +10,13 @@ module ApplicationHelper
       'https://placehold.co/600x400/EEE/31343C'
     end
   end
+
+  def emptyStringHelper(string, replace="N/D")
+    string = string.to_s
+    if !string || string.empty?
+      replace
+    else
+      string
+    end
+  end
 end

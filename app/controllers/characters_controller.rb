@@ -1,4 +1,7 @@
 class CharactersController < ApplicationController
+
+  before_action :set_character, only: [:show, :destroy]
+
   def index
     @characters = Character.all
   end
@@ -29,11 +32,22 @@ class CharactersController < ApplicationController
   end
 
   def destroy
+    @character.destroy
+
+    respond_to do |format|
+      format.html { redirect_to character_url, notice: "Character was successfully destroyed." }
+      format.json { head :no_content }
+      format.turbo_stream {redirect_to characters_path}
+    end
   end
 
   private
 
     def character_params
       params.require(:character).permit(:name, :japanese_name, :image, :nationality, :catchphrase, :family, :chapter, :living, :is_human, :skill_ids => [])
+    end
+
+    def set_character
+      @character = Character.find_by(id: params[:id])
     end
 end

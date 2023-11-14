@@ -1,25 +1,20 @@
 class StandsController < ApplicationController
   before_action :set_stand, only: %i[ show edit update destroy ]
 
-  # GET /stands or /stands.json
   def index
     @stands = Stand.all
   end
 
-  # GET /stands/1 or /stands/1.json
   def show
   end
 
-  # GET /stands/new
   def new
     @stand = Stand.new
   end
 
-  # GET /stands/1/edit
   def edit
   end
 
-  # POST /stands or /stands.json
   def create
     @stand = Stand.new(stand_params)
     @stand.save
@@ -33,7 +28,6 @@ class StandsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /stands/1 or /stands/1.json
   def update
     respond_to do |format|
       if @stand.update(stand_params)
@@ -46,13 +40,13 @@ class StandsController < ApplicationController
     end
   end
 
-  # DELETE /stands/1 or /stands/1.json
   def destroy
     @stand.destroy
 
     respond_to do |format|
       format.html { redirect_to stands_url, notice: "Stand was successfully destroyed." }
       format.json { head :no_content }
+      format.turbo_stream {redirect_to stands_path}
     end
   end
 
